@@ -2,7 +2,7 @@ import apiConfig from './apiConfig';
 import { todoRequest } from './axiosInstance';
 
 const todoApi = {
-  getAllActivities: async () => {
+  getAllActivity: async () => {
     try {
       const res = await todoRequest.get('activity-groups/', {
         params: { email: apiConfig.EMAIL },
@@ -10,6 +10,19 @@ const todoApi = {
       return res.data.data;
     } catch (error) {
       console.error(error.message);
+    }
+  },
+  createActivity: async (
+    data = {
+      title: 'New Activity',
+      email: 'aryakrisna07@gmail.com',
+    }
+  ) => {
+    try {
+      const res = await todoRequest.post('activity-groups/', data);
+      return res;
+    } catch (err) {
+      console.error(err.message);
     }
   },
 };

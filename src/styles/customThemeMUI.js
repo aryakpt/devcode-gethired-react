@@ -12,17 +12,22 @@ export const customThemeMUI = createTheme({
     h1: {
       fontSize: '36px',
       lineHeight: '54px',
-      fontWeight: 400,
     },
     h2: {
       fontSize: '24px',
       lineHeight: '36px',
-      fontWeight: 400,
+    },
+    h3: {
+      fontSize: '18px',
+      lineHeight: '27px',
+    },
+    s: {
+      fontSize: '14px',
+      lineHeight: '21px',
     },
     button: {
       fontSize: '18px',
       lineHeight: '27px',
-      fontWeight: 400,
     },
   },
   palette: {
