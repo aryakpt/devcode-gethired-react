@@ -1,3 +1,3 @@
 import IconPlus from './IconPlus';
-
-export { IconPlus };
+import IconActivityEmptyState from './IconActivityEmptyState';
+export { IconPlus, IconActivityEmptyState };
