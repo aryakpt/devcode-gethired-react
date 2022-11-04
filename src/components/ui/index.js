@@ -1,3 +1,3 @@
 import Button from './Button/Button';
-
-export { Button };
+import ModalConfirm from './ModalConfirm/ModalConfirm';
+export { Button, ModalConfirm };
