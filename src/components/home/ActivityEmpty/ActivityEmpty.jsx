@@ -20,7 +20,7 @@ const ActivityEmpty = () => {
   return (
     <Box data-cy="activity-empty-state" sx={styles.activityEmpty}>
       <form onSubmit={submitHandler}>
-        <Button type={'submit'}>
+        <Button data_cy={'activity-add-button'} type={'submit'}>
           <IconActivityEmptyState />
         </Button>
       </form>
