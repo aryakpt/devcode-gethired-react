@@ -17,6 +17,12 @@ const ActivityProvider = ({ children }) => {
     return res;
   };
 
+  const deleteActivity = (id) => {
+    todoApi.deleteActivity(id);
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   useEffect(() => {
     fetchAllActivity();
   }, []);
@@ -24,6 +30,7 @@ const ActivityProvider = ({ children }) => {
   const value = {
     todos,
     createActivity,
+    deleteActivity,
   };
 
   return <ActivityContext.Provider value={value}>{children}</ActivityContext.Provider>;

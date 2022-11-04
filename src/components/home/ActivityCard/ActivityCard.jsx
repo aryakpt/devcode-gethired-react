@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from './styles';
 import { IconTrashCan, IconModalDelete } from '../../../assets';
 import { Button, ModalConfirm } from '../../ui';
 import { trimmedString } from '../../../utils/stringUtils';
+import { ActivityContext } from '../../../context/ActivityContext/ActivityContext';
 
 const ActivityCard = ({ data_cy, id, title, created_at }) => {
+  const activityCtx = useContext(ActivityContext);
+
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
   const date = new Date(created_at).toLocaleDateString('en-GB', {
@@ -13,6 +16,11 @@ const ActivityCard = ({ data_cy, id, title, created_at }) => {
     month: 'long',
     year: 'numeric',
   });
+
+  const onConfirmModalDelete = (id) => {
+    activityCtx.deleteActivity(id);
+    setIsConfirmModalOpen(false);
+  };
 
   return (
     <>
@@ -44,7 +52,7 @@ const ActivityCard = ({ data_cy, id, title, created_at }) => {
         icon={<IconModalDelete />}
         isOpen={isConfirmModalOpen}
         onClose={() => setIsConfirmModalOpen(false)}
-        onConfirm={() => console.log('onConfirm Function')}
+        onConfirm={() => onConfirmModalDelete(id)}
       />
     </>
   );

@@ -23,19 +23,17 @@ const ModalConfirm = ({ title, message, isOpen, onClose, onConfirm, icon, data_c
           </Typography>
         </Box>
         <Box sx={styles.modalConfirmCardFooter}>
-          <form>
-            <Button data_cy={`${data_cy}-cancel-button`} onClick={onClose} variant="secondary">
-              Batal
-            </Button>
-            <Button
-              data_cy={`${data_cy}-confirm-button`}
-              type="submit"
-              onClick={onConfirm}
-              variant="danger"
-            >
-              Hapus
-            </Button>
-          </form>
+          <Button data_cy={`${data_cy}-cancel-button`} onClick={onClose} variant="secondary">
+            Batal
+          </Button>
+          <Button
+            data_cy={`${data_cy}-confirm-button`}
+            type="submit"
+            onClick={onConfirm}
+            variant="danger"
+          >
+            Hapus
+          </Button>
         </Box>
       </Box>
     </Modal>

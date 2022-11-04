@@ -22,11 +22,9 @@ const styles = {
     textAlign: 'center',
   },
   modalConfirmCardFooter: {
-    form: {
-      display: 'flex',
-      justifyContent: 'center',
-      gap: '20px',
-    },
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '20px',
   },
 };
 

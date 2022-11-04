@@ -25,6 +25,14 @@ const todoApi = {
       console.error(err.message);
     }
   },
+  deleteActivity: async (id) => {
+    try {
+      const res = await todoRequest.delete(`activity-groups/${id}`);
+      return res;
+    } catch (err) {
+      console.error(err.message);
+    }
+  },
 };
 
 export default todoApi;
