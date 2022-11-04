@@ -4,11 +4,16 @@ const { palette } = customThemeMUI;
 
 const styles = {
   btn: {
-    color: palette.custom['neutral-white'],
-    backgroundColor: palette.custom['primary-color'],
     borderRadius: '45px',
     padding: '13.5px 22px',
-    textTransform: 'capitalize',
+    transition: 'none',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+  },
+  primary: {
+    color: palette.custom['neutral-white'],
+    backgroundColor: palette.custom['primary-color'],
     '&:hover': {
       backgroundColor: palette.custom['primary-color'],
     },
