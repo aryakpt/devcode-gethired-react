@@ -1,11 +1,12 @@
 import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import { Container } from '../../container';
 import styles from './styles';
 
 const Navbar = () => {
   return (
     <Box data-cy="header-background" component="nav" sx={styles.navbar}>
-      <Container maxWidth="lg">
+      <Container>
         <Typography
           data-cy="header-title"
           variant="h2"

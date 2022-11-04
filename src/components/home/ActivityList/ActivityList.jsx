@@ -9,7 +9,7 @@ const ActivityList = () => {
     <Grid sx={styles.activityList} container spacing={'20px'}>
       {activityCtx.todos.map((todo, idx) => {
         return (
-          <Grid item md={4} lg={3} key={idx}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
             <ActivityCard
               data_cy={`activity-item-${idx}`}
               id={todo.id}

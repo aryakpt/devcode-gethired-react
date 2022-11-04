@@ -1,6 +1,6 @@
 const styles = {
   activityCard: {
-    minWidth: '235px',
+    // minWidth: '235px',
     width: '100%',
     minHeight: '235px',
     height: '100%',

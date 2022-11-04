@@ -1,3 +1,5 @@
 import { DefaultLayout } from './layouts';
 import { Button } from './ui';
-export { DefaultLayout, Button };
+import { Container } from './container';
+
+export { DefaultLayout, Button, Container };

@@ -24,7 +24,7 @@ const ActivityCard = ({ data_cy, id, title, created_at }) => {
         <Button
           data_cy="activity-item-delete-button"
           sx={{ padding: 0, minWidth: 0 }}
-          startIcon={<IconTrashCan />}
+          endIcon={<IconTrashCan />}
         ></Button>
       </Box>
     </Box>
