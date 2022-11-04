@@ -1,3 +1,4 @@
 import IconPlus from './IconPlus';
 import IconActivityEmptyState from './IconActivityEmptyState';
-export { IconPlus, IconActivityEmptyState };
+import IconTrashCan from './IconTrashCan';
+export { IconPlus, IconActivityEmptyState, IconTrashCan };
