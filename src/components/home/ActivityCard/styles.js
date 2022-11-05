@@ -1,6 +1,6 @@
 const styles = {
   activityCard: {
-    // minWidth: '235px',
+    position: 'relative',
     width: '100%',
     minHeight: '235px',
     height: '100%',
@@ -11,6 +11,13 @@ const styles = {
     justifyContent: 'space-between',
     borderRadius: '12px',
     boxShadow: '0px 6px 6px rgba(0,0,0,0.1)',
+    a: {
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      top: 0,
+      right: 0,
+    },
   },
   activityCardFooter: {
     display: 'flex',

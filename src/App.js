@@ -1,14 +1,23 @@
 import { ActivityProvider } from './context/ActivityContext/ActivityContext';
-import { Home } from './pages';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home, Detail } from './pages';
 import './styles/global.css';
 
 function App() {
   return (
-    <>
-      <ActivityProvider>
-        <Home />
-      </ActivityProvider>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <ActivityProvider>
+              <Home />
+            </ActivityProvider>
+          }
+        />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,3 +1,9 @@
-import { IconPlus, IconActivityEmptyState, IconTrashCan, IconModalDelete } from './icons';
+import {
+  IconPlus,
+  IconActivityEmptyState,
+  IconTrashCan,
+  IconModalDelete,
+  IconSuccess,
+} from './icons';
 
-export { IconPlus, IconActivityEmptyState, IconTrashCan, IconModalDelete };
+export { IconPlus, IconActivityEmptyState, IconTrashCan, IconModalDelete, IconSuccess };

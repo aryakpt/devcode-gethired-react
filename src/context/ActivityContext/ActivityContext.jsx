@@ -18,9 +18,9 @@ const ActivityProvider = ({ children }) => {
   };
 
   const deleteActivity = (id) => {
-    todoApi.deleteActivity(id);
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
+    return todoApi.deleteActivity(id);
   };
 
   useEffect(() => {

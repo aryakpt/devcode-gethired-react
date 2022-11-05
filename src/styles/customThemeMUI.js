@@ -21,6 +21,10 @@ export const customThemeMUI = createTheme({
       fontSize: '18px',
       lineHeight: '27px',
     },
+    h4: {
+      fontSize: '14px',
+      lineHeight: '21px',
+    },
     s: {
       fontSize: '14px',
       lineHeight: '21px',

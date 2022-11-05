@@ -1,3 +1,5 @@
 import Button from './Button/Button';
 import ModalConfirm from './ModalConfirm/ModalConfirm';
-export { Button, ModalConfirm };
+import ModalAlert from './ModalAlert/ModalAlert';
+
+export { Button, ModalConfirm, ModalAlert };

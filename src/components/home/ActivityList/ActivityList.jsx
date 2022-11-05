@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ActivityContext } from '../../../context/ActivityContext/ActivityContext';
 import { Grid } from '@mui/material';
 import ActivityCard from '../ActivityCard/ActivityCard';
 import styles from './styles';
+
 const ActivityList = () => {
   const activityCtx = useContext(ActivityContext);
   return (
