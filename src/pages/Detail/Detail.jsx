@@ -22,8 +22,7 @@ const Detail = () => {
 
   const addTodoHandler = (data, activityId = id) => {
     const newData = { activity_group_id: activityId, ...data };
-    todoApi.createTodo(newData);
-    todoCtx.setTodos([newData, ...todoCtx.todos]);
+    todoCtx.createTodo(newData);
     todoCtx.setIsCreateModalOpen(false);
   };
 

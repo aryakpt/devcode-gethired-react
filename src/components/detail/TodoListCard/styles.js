@@ -1,3 +1,11 @@
+const priorityColor = {
+  'very-high': 'custom.red-1',
+  high: 'custom.yellow-1',
+  medium: 'custom.green-1',
+  low: 'custom.blue-1',
+  'very-low': 'custom.purple-1',
+};
+
 const styles = {
   todoListCard: {
     backgroundColor: 'custom.neutral-white',
@@ -11,6 +19,15 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '22px',
+  },
+  todoTitle: (priority) => {
+    return {
+      width: '14px',
+      height: '14px',
+      backgroundColor: priorityColor[priority],
+      borderRadius: '50%',
+      marginRight: '19px',
+    };
   },
 };
 

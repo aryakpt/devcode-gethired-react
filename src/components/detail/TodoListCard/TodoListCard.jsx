@@ -39,7 +39,10 @@ const TodoListCard = ({ todo, data_cy }) => {
             onChange={inActiveTodohandler(todo.id)}
             checked={todo.is_active ? false : true}
           />
-          <Typography>{todo.is_active ? <b>{todo.title}</b> : <del>{todo.title}</del>}</Typography>
+          <Box sx={styles.todoTitle(todo.priority)}></Box>
+          <Typography sx={{ marginLeft: '-20px' }}>
+            {todo.is_active ? <b>{todo.title}</b> : <del>{todo.title}</del>}
+          </Typography>
           <Button
             startIcon={<IconTitleEdit />}
             sx={{ padding: 0 }}
@@ -63,14 +66,16 @@ const TodoListCard = ({ todo, data_cy }) => {
           onConfirm={() => onConfirmModalDelete(todo.id)}
         />
       )}
-      <ModalEditListItem
-        data_cy="modal-edit"
-        todo={todo}
-        title="Edit Item"
-        isOpen={isEditModalOpen}
-        onClose={() => setIsEditModalOpen(false)}
-        onConfirm={updateTodoHandler}
-      />
+      {isEditModalOpen && (
+        <ModalEditListItem
+          data_cy="modal-edit"
+          todo={todo}
+          title="Edit Item"
+          isOpen={isEditModalOpen}
+          onClose={() => setIsEditModalOpen(false)}
+          onConfirm={updateTodoHandler}
+        />
+      )}
     </>
   );
 };

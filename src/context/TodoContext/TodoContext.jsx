@@ -12,6 +12,11 @@ const TodoProvider = ({ children }) => {
     setTodos([...res, ...todos]);
   };
 
+  const createTodo = async (data) => {
+    const res = await todoApi.createTodo(data);
+    setTodos([res, ...todos]);
+  };
+
   const updateTodo = async (todoId, data) => {
     const res = await todoApi.updateTodo(todoId, data);
     const newTodos = [...todos];
@@ -32,6 +37,7 @@ const TodoProvider = ({ children }) => {
     isCreateModalOpen,
     setIsCreateModalOpen,
     getAllTodos,
+    createTodo,
     updateTodo,
     deleteTodo,
   };

@@ -60,7 +60,7 @@ const todoApi = {
   createTodo: async (data) => {
     try {
       const res = await todoRequest.post('todo-items/', data);
-      return res;
+      return res.data;
     } catch (err) {
       console.error(err.message);
     }
