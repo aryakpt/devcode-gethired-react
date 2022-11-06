@@ -133,7 +133,12 @@ const ModalAddListItem = ({ data_cy, isOpen, onClose, onConfirm, title }) => {
             </Box>
           </Box>
           <Box sx={styles.modalListItemCardFooter}>
-            <Button data_cy={`${data_cy}-save-button`} variant="primary" type="submit">
+            <Button
+              data_cy={`${data_cy}-save-button`}
+              variant="primary"
+              type="submit"
+              disabled={inputTitle || inputPriority ? false : true}
+            >
               Simpan
             </Button>
           </Box>

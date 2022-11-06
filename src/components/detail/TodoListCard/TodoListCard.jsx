@@ -3,14 +3,14 @@ import styles from './styles';
 import { Box, Checkbox, Typography } from '@mui/material';
 
 import { TodoContext } from '../../../context/TodoContext/TodoContext';
-import { IconTrashCan, IconModalDelete, IconTitleEdit } from '../../../assets';
-import { Button, ModalConfirm, ModalEditListItem } from '../../ui';
+import { IconTrashCan, IconModalDelete, IconTitleEdit, IconSuccess } from '../../../assets';
+import { Button, ModalAlert, ModalConfirm, ModalEditListItem } from '../../ui';
 
 const TodoListCard = ({ todo, data_cy }) => {
   const todoCtx = useContext(TodoContext);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-
+  const [isAlertModalOpen, setIsAlertModalOpen] = useState(false);
   const inActiveTodohandler = (todoId) => {
     return (e) => {
       if (e.target.checked) {
@@ -22,8 +22,11 @@ const TodoListCard = ({ todo, data_cy }) => {
   };
 
   const onConfirmModalDelete = async (todoId) => {
-    todoCtx.deleteTodo(todoId);
-    setIsConfirmModalOpen(false);
+    const res = await todoCtx.deleteTodo(todoId);
+    if (res) {
+      setIsAlertModalOpen(true);
+      setIsConfirmModalOpen(false);
+    }
   };
 
   const updateTodoHandler = (data, todoId = todo.id) => {
@@ -77,6 +80,15 @@ const TodoListCard = ({ todo, data_cy }) => {
           isOpen={isEditModalOpen}
           onClose={() => setIsEditModalOpen(false)}
           onConfirm={updateTodoHandler}
+        />
+      )}
+      {isAlertModalOpen && (
+        <ModalAlert
+          data_cy="modal-information"
+          message="Item berhasil dihapus"
+          icon={<IconSuccess />}
+          isOpen={isAlertModalOpen}
+          onClose={() => setIsAlertModalOpen(false)}
         />
       )}
     </>
