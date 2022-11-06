@@ -30,7 +30,7 @@ const Detail = () => {
     <>
       <DefaultLayout>
         <Container>
-          <DetailHeader activity={activity} isTodosExist={todoCtx.todos.length} />
+          <DetailHeader activity={activity} />
           {todoCtx.todos.length ? <TodoList /> : <TodoListEmpty />}
         </Container>
       </DefaultLayout>
