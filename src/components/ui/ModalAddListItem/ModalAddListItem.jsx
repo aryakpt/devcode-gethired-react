@@ -137,7 +137,7 @@ const ModalAddListItem = ({ data_cy, isOpen, onClose, onConfirm, title }) => {
               data_cy={`${data_cy}-save-button`}
               variant="primary"
               type="submit"
-              disabled={inputTitle || inputPriority ? false : true}
+              disabled={inputTitle && inputPriority ? false : true}
             >
               Simpan
             </Button>
