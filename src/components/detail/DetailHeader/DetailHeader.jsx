@@ -9,7 +9,7 @@ import { trimmedString } from '../../../utils/stringUtils';
 import { TodoContext } from '../../../context/TodoContext/TodoContext';
 import ModalSort from '../ModalSort/ModalSort';
 
-const DetailHeader = ({ activity }) => {
+const DetailHeader = ({ activity, isTodosExist }) => {
   const todoCtx = useContext(TodoContext);
   const [isOnEdit, setIsOnEdit] = useState(false);
   const [isSortButtonOpen, setIsSortButtonOpen] = useState(false);
@@ -73,12 +73,16 @@ const DetailHeader = ({ activity }) => {
       </Box>
       <Box sx={styles.detailHeaderRight}>
         <Box sx={styles.detailHeaderSortButton}>
-          <Button
-            data_cy="todo-sort-button"
-            endIcon={<IconSort />}
-            sx={{ padding: 0 }}
-            onClick={() => setIsSortButtonOpen(true)}
-          ></Button>
+          {isTodosExist ? (
+            <Button
+              data_cy="todo-sort-button"
+              endIcon={<IconSort />}
+              sx={{ padding: 0 }}
+              onClick={() => setIsSortButtonOpen(true)}
+            ></Button>
+          ) : (
+            ''
+          )}
           {isSortButtonOpen && <ModalSort onClose={() => setIsSortButtonOpen(false)} />}
         </Box>
         <Button

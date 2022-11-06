@@ -11,7 +11,7 @@ const styles = {
     position: 'absolute',
     borderRadius: '6px',
     zIndex: 2,
-    top: 70,
+    top: 0,
     right: 0,
     backgroundColor: 'custom.neutral-white',
     boxShadow: ' 0px 6px 15px 5px rgba(0, 0, 0, 0.1)',
