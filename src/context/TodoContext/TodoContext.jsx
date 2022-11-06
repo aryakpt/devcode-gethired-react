@@ -7,6 +7,28 @@ const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
+  const onSortHandler = (sortBy) => {
+    const newTodos = [...todos];
+    switch (sortBy) {
+      case 'latest':
+        return setTodos(newTodos.sort((a, b) => b.id - a.id));
+      case 'oldest':
+        return setTodos(newTodos.sort((a, b) => a.id - b.id));
+      case 'asc':
+        return setTodos(
+          newTodos.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
+        );
+      case 'dec':
+        return setTodos(
+          newTodos.sort((a, b) => (b.title.toLowerCase() > a.title.toLowerCase() ? 1 : -1))
+        );
+      case 'unfinished':
+        return setTodos(newTodos.sort((a, b) => b.is_active - a.is_active));
+      default:
+        break;
+    }
+  };
+
   const getAllTodos = async (activityId) => {
     const res = await todoApi.getAllTodo(activityId);
     setTodos([...res, ...todos]);
@@ -40,6 +62,7 @@ const TodoProvider = ({ children }) => {
     createTodo,
     updateTodo,
     deleteTodo,
+    onSortHandler,
   };
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;

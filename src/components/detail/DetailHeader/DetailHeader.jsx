@@ -7,10 +7,12 @@ import styles from './styles';
 import todoApi from '../../../api/todoApi';
 import { trimmedString } from '../../../utils/stringUtils';
 import { TodoContext } from '../../../context/TodoContext/TodoContext';
+import ModalSort from '../ModalSort/ModalSort';
 
 const DetailHeader = ({ activity, isTodosExist }) => {
   const todoCtx = useContext(TodoContext);
   const [isOnEdit, setIsOnEdit] = useState(false);
+  const [isSortButtonOpen, setIsSortButtonOpen] = useState(false);
   const [activityTitle, setActivityTitle] = useState('');
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const DetailHeader = ({ activity, isTodosExist }) => {
   return (
     <Box sx={styles.detailHeader}>
       <Box sx={styles.detailHeaderLeft}>
-        <Link to="/">
+        <Link data-cy="todo-back-button" to="/">
           <IconBack />
         </Link>
         {isOnEdit ? (
@@ -62,10 +64,27 @@ const DetailHeader = ({ activity, isTodosExist }) => {
             {trimmedString(activityTitle)}
           </Typography>
         )}
-        <Button startIcon={<IconTitleEdit />} sx={{ padding: 0 }} onClick={isOnEditHandler} />
+        <Button
+          data_cy="todo-title-edit-button"
+          startIcon={<IconTitleEdit />}
+          sx={{ padding: 0 }}
+          onClick={isOnEditHandler}
+        />
       </Box>
       <Box sx={styles.detailHeaderRight}>
-        {isTodosExist ? <Button endIcon={<IconSort />} sx={{ padding: 0 }}></Button> : ''}
+        <Box sx={styles.detailHeaderSortButton}>
+          {isTodosExist ? (
+            <Button
+              data_cy="todo-sort-button"
+              endIcon={<IconSort />}
+              sx={{ padding: 0 }}
+              onClick={() => setIsSortButtonOpen(true)}
+            ></Button>
+          ) : (
+            ''
+          )}
+          {isSortButtonOpen && <ModalSort onClose={() => setIsSortButtonOpen(false)} />}
+        </Box>
         <Button
           data_cy="todo-add-button"
           type="submit"

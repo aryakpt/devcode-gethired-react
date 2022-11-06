@@ -13,6 +13,9 @@ const styles = {
     gap: '18px',
     alignItems: 'center',
   },
+  detailHeaderSortButton: {
+    position: 'relative',
+  },
 };
 
 export default styles;

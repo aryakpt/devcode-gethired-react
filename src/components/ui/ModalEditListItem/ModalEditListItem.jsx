@@ -14,20 +14,23 @@ import Button from '../Button/Button';
 import { IconClose } from '../../../assets';
 
 const priorityList = [
-  { value: 'very-high', color: 'custom.red-1' },
-  { value: 'high', color: 'custom.yellow-1' },
+  { value: 'very-high', color: 'custom.red-1', text: 'Very High' },
+  { value: 'high', color: 'custom.yellow-1', text: 'High' },
   {
-    value: 'medium',
+    value: 'normal',
     color: 'custom.green-1',
+    text: 'Medium',
   },
   {
     value: 'low',
     color: 'custom.blue-1',
+    text: 'Low',
   },
 
   {
     value: 'very-low',
     color: 'custom.purple-1',
+    text: 'Very Low',
   },
 ];
 
@@ -97,7 +100,7 @@ const ModalEditListItem = ({ todo, data_cy, isOpen, onClose, onConfirm, title })
 
                     return (
                       <Typography sx={{ textTransform: 'capitalize' }}>
-                        {selected.split('-').join(' ')}
+                        {selected === 'normal' ? 'Medium' : selected.split('-').join(' ')}
                       </Typography>
                     );
                   }}
@@ -111,7 +114,7 @@ const ModalEditListItem = ({ todo, data_cy, isOpen, onClose, onConfirm, title })
                       <MenuItem key={idx} value={priority.value}>
                         <Box component="span" sx={styles.menuItemSpan(priority.color)}></Box>
                         <Typography sx={{ textTransform: 'capitalize' }}>
-                          {priority.value.split('-').join(' ')}
+                          {priority.text}
                         </Typography>
                       </MenuItem>
                     );

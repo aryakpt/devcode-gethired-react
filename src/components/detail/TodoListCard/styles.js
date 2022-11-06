@@ -1,7 +1,7 @@
 const priorityColor = {
   'very-high': 'custom.red-1',
   high: 'custom.yellow-1',
-  medium: 'custom.green-1',
+  normal: 'custom.green-1',
   low: 'custom.blue-1',
   'very-low': 'custom.purple-1',
 };

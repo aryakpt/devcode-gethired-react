@@ -36,20 +36,23 @@ const TodoListCard = ({ todo, data_cy }) => {
       <Box data-cy={data_cy} sx={styles.todoListCard}>
         <Box sx={styles.todoListCardBody}>
           <Checkbox
+            data-cy={`${data_cy}-checkbox`}
             onChange={inActiveTodohandler(todo.id)}
             checked={todo.is_active ? false : true}
           />
-          <Box sx={styles.todoTitle(todo.priority)}></Box>
-          <Typography sx={{ marginLeft: '-20px' }}>
+          <Box data-cy={`${data_cy}-priority-indicator`} sx={styles.todoTitle(todo.priority)}></Box>
+          <Typography data-cy={`${data_cy}-title`} sx={{ marginLeft: '-20px' }}>
             {todo.is_active ? <b>{todo.title}</b> : <del>{todo.title}</del>}
           </Typography>
           <Button
+            data_cy={`${data_cy}-edit-button`}
             startIcon={<IconTitleEdit />}
             sx={{ padding: 0 }}
             onClick={() => setIsEditModalOpen(true)}
           ></Button>
         </Box>
         <Button
+          data_cy={`${data_cy}-delete-button`}
           endIcon={<IconTrashCan />}
           onClick={() => setIsConfirmModalOpen(true)}
           sx={{ padding: 0 }}

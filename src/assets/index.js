@@ -8,6 +8,11 @@ import {
   IconTitleEdit,
   IconSort,
   IconClose,
+  IconLatest,
+  IconOldest,
+  IconAZ,
+  IconZA,
+  IconUnfinished,
 } from './icons';
 
 export {
@@ -20,4 +25,9 @@ export {
   IconTitleEdit,
   IconSort,
   IconClose,
+  IconLatest,
+  IconOldest,
+  IconAZ,
+  IconZA,
+  IconUnfinished,
 };

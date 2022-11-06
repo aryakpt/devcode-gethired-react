@@ -7,6 +7,11 @@ import IconBack from './IconBack';
 import IconTitleEdit from './IconTitleEdit';
 import IconSort from './IconSort';
 import IconClose from './IconClose';
+import IconLatest from './IconLatest';
+import IconOldest from './IconOldest';
+import IconAZ from './IconAZ';
+import IconZA from './IconZA';
+import IconUnfinished from './IconUnfinished';
 export {
   IconPlus,
   IconActivityEmptyState,
@@ -17,4 +22,9 @@ export {
   IconTitleEdit,
   IconSort,
   IconClose,
+  IconLatest,
+  IconOldest,
+  IconAZ,
+  IconZA,
+  IconUnfinished,
 };
