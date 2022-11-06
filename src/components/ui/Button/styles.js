@@ -5,7 +5,7 @@ const { palette } = customThemeMUI;
 const styles = {
   btn: {
     borderRadius: '45px',
-    padding: '13.5px 50px',
+    padding: '13.5px 40px',
     transition: 'none',
     '&:hover': {
       backgroundColor: 'transparent',

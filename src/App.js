@@ -2,6 +2,7 @@ import { ActivityProvider } from './context/ActivityContext/ActivityContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home, Detail } from './pages';
 import './styles/global.css';
+import { TodoProvider } from './context/TodoContext/TodoContext';
 
 function App() {
   return (
@@ -15,7 +16,14 @@ function App() {
             </ActivityProvider>
           }
         />
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route
+          path="/detail/:id"
+          element={
+            <TodoProvider>
+              <Detail />
+            </TodoProvider>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
