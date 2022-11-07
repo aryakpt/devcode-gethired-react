@@ -4,8 +4,10 @@ import { DefaultLayout, Container, ModalAddListItem } from '../../components';
 import { DetailHeader, TodoListEmpty, TodoList } from '../../components/detail';
 import { TodoContext } from '../../context/TodoContext/TodoContext';
 import todoApi from '../../api/todoApi';
+import { useDocumentTitle } from '../../utils/hooks';
 
 const Detail = () => {
+  useDocumentTitle('Detail');
   const todoCtx = useContext(TodoContext);
   const { id } = useParams();
   const [activity, setActivity] = useState({});
