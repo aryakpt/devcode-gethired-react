@@ -7,7 +7,7 @@ import styles from './styles';
 const ActivityList = () => {
   const activityCtx = useContext(ActivityContext);
   return (
-    <Grid sx={styles.activityList} container spacing={'20px'}>
+    <Grid data-cy="activity-item" sx={styles.activityList} container spacing={'20px'}>
       {activityCtx.activities.map((activity, idx) => {
         return (
           <Grid data-cy={`activity-item-${idx}`} item xs={12} sm={6} md={4} lg={3} key={idx}>
