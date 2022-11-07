@@ -13,6 +13,7 @@ import {
   IconAZ,
   IconZA,
   IconUnfinished,
+  IconTodoEmptyState,
 } from './icons';
 
 export {
@@ -30,4 +31,5 @@ export {
   IconAZ,
   IconZA,
   IconUnfinished,
+  IconTodoEmptyState,
 };

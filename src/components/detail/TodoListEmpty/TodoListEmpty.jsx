@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Box } from '@mui/material';
 import styles from './styles';
-import { IconActivityEmptyState } from '../../../assets';
+import { IconTodoEmptyState } from '../../../assets';
 import { TodoContext } from '../../../context/TodoContext/TodoContext';
 
 const TodoListEmpty = () => {
@@ -13,7 +13,7 @@ const TodoListEmpty = () => {
       sx={styles.todoEmpty}
       onClick={() => todoCtx.setIsCreateModalOpen(true)}
     >
-      <IconActivityEmptyState />
+      <IconTodoEmptyState />
     </Box>
   );
 };

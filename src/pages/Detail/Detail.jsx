@@ -10,13 +10,13 @@ const Detail = () => {
   const { id } = useParams();
   const [activity, setActivity] = useState({});
 
-  const getActivity = async () => {
+  const getActivity = async (id) => {
     const res = await todoApi.getActivity(id);
     setActivity(res);
   };
 
   useEffect(() => {
-    getActivity();
+    getActivity(id);
     todoCtx.getAllTodos(id);
   }, []);
 

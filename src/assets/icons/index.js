@@ -12,6 +12,7 @@ import IconOldest from './IconOldest';
 import IconAZ from './IconAZ';
 import IconZA from './IconZA';
 import IconUnfinished from './IconUnfinished';
+import IconTodoEmptyState from './IconTodoEmptyState';
 export {
   IconPlus,
   IconActivityEmptyState,
@@ -27,4 +28,5 @@ export {
   IconAZ,
   IconZA,
   IconUnfinished,
+  IconTodoEmptyState,
 };

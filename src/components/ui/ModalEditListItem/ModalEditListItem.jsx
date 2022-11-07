@@ -48,8 +48,8 @@ const ModalEditListItem = ({ todo, data_cy, isOpen, onClose, onConfirm, title })
   };
 
   return (
-    <Modal data-cy={data_cy} open={isOpen} onClose={onClose}>
-      <Box sx={styles.modalListItemCard}>
+    <Modal open={isOpen} onClose={onClose}>
+      <Box data-cy={data_cy} sx={styles.modalListItemCard}>
         <Box sx={styles.modalListItemCardHeader}>
           <Typography data-cy={`${data_cy}-title`} variant="h3" fontWeight={700}>
             {title}
@@ -64,8 +64,9 @@ const ModalEditListItem = ({ todo, data_cy, isOpen, onClose, onConfirm, title })
         <form onSubmit={onSubmitHandler}>
           <Box sx={styles.modalListItemCardBody}>
             <Box sx={styles.formControl}>
-              <InputLabel>NAMA LIST ITEM</InputLabel>
+              <InputLabel data-cy={`${data_cy}-name-title`}>NAMA LIST ITEM</InputLabel>
               <Input
+                data-cy={`${data_cy}-name-input`}
                 disableUnderline
                 type="text"
                 placeholder="Tambahkan nama kalian"
@@ -82,8 +83,9 @@ const ModalEditListItem = ({ todo, data_cy, isOpen, onClose, onConfirm, title })
               />
             </Box>
             <Box sx={styles.formControl}>
-              <InputLabel>PRIORITY</InputLabel>
+              <InputLabel data-cy={`${data_cy}-name-title`}>PRIORITY</InputLabel>
               <FormControl
+                data-cy={`${data_cy}-priority-dropdown`}
                 sx={{
                   width: '100%',
                   maxWidth: '205px',
@@ -111,7 +113,11 @@ const ModalEditListItem = ({ todo, data_cy, isOpen, onClose, onConfirm, title })
                   </MenuItem>
                   {priorityList.map((priority, idx) => {
                     return (
-                      <MenuItem key={idx} value={priority.value}>
+                      <MenuItem
+                        data-cy={`${data_cy}-priority-item`}
+                        key={idx}
+                        value={priority.value}
+                      >
                         <Box component="span" sx={styles.menuItemSpan(priority.color)}></Box>
                         <Typography sx={{ textTransform: 'capitalize' }}>
                           {priority.text}

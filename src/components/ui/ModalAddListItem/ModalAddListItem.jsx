@@ -51,8 +51,8 @@ const ModalAddListItem = ({ data_cy, isOpen, onClose, onConfirm, title }) => {
   };
 
   return (
-    <Modal data-cy={data_cy} open={isOpen} onClose={onClose}>
-      <Box sx={styles.modalListItemCard}>
+    <Modal open={isOpen} onClose={onClose}>
+      <Box data-cy={data_cy} sx={styles.modalListItemCard}>
         <Box sx={styles.modalListItemCardHeader}>
           <Typography data-cy={`${data_cy}-title`} variant="h3" fontWeight={700}>
             {title}
