@@ -5,8 +5,8 @@ import Button from '../Button/Button';
 
 const ModalConfirm = ({ title, message, isOpen, onClose, onConfirm, icon, data_cy }) => {
   return (
-    <Modal data-cy={data_cy} open={isOpen} onClose={onClose}>
-      <Box sx={styles.modalConfirmCard}>
+    <Modal open={isOpen} onClose={onClose}>
+      <Box sx={styles.modalConfirmCard} data-cy={data_cy}>
         <Box data-cy={`${data_cy}-icon`} sx={styles.modalConfirmCardHeader}>
           {icon}
         </Box>

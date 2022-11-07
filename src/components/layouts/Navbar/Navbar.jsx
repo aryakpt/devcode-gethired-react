@@ -6,7 +6,7 @@ import styles from './styles';
 const Navbar = () => {
   return (
     <Box data-cy="header-background" component="nav" sx={styles.navbar}>
-      <Container>
+      <Container data_cy="header-background">
         <Typography
           data-cy="header-title"
           variant="h2"

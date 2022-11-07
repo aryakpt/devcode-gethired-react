@@ -1,20 +1,14 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Button } from '../../ui';
 import { IconPlus } from '../../../assets';
-import styles from './styles';
 import { ActivityContext } from '../../../context/ActivityContext/ActivityContext';
+import styles from './styles';
 
 const HomeHeader = () => {
   const activityCtx = useContext(ActivityContext);
-
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    const newData = {
-      title: 'New Activity',
-      email: 'aryakrisna07@gmail.com',
-    };
-    return activityCtx.createActivity(newData);
+  const createActivity = () => {
+    return activityCtx.createActivity();
   };
 
   return (
@@ -27,16 +21,15 @@ const HomeHeader = () => {
       >
         Activity
       </Typography>
-      <form onSubmit={submitHandler}>
-        <Button
-          data_cy="activity-add-button"
-          type="submit"
-          variant="primary"
-          startIcon={<IconPlus />}
-        >
-          Tambah
-        </Button>
-      </form>
+      <Button
+        data_cy="activity-add-button"
+        type="submit"
+        variant="primary"
+        startIcon={<IconPlus />}
+        onClick={createActivity}
+      >
+        Tambah
+      </Button>
     </Box>
   );
 };

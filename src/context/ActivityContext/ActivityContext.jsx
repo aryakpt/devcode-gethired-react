@@ -1,34 +1,37 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState, createContext } from 'react';
 import todoApi from '../../api/todoApi';
 
 const ActivityContext = createContext();
 
 const ActivityProvider = ({ children }) => {
-  const [todos, setTodos] = useState([]);
+  const [activities, setActivities] = useState([]);
 
-  const fetchAllActivity = async () => {
+  const getAllActivity = async () => {
     const res = await todoApi.getAllActivity();
-    setTodos(res);
+    setActivities(res);
+    return res;
   };
 
-  const createActivity = async () => {
-    const res = await todoApi.createActivity();
-    setTodos([res.data, ...todos]);
+  const createActivity = async (
+    data = {
+      title: 'New Activity',
+      email: 'aryakrisna07@gmail.com',
+    }
+  ) => {
+    const res = await todoApi.createActivity(data);
+    setActivities([res.data, ...activities]);
     return res;
   };
 
   const deleteActivity = (id) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
+    const newactivities = activities.filter((todo) => todo.id !== id);
+    setActivities(newactivities);
     return todoApi.deleteActivity(id);
   };
 
-  useEffect(() => {
-    fetchAllActivity();
-  }, []);
-
   const value = {
-    todos,
+    activities,
+    getAllActivity,
     createActivity,
     deleteActivity,
   };

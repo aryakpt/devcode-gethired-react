@@ -4,8 +4,8 @@ import styles from './styles';
 
 const ModalAlert = ({ icon, message, isOpen, onClose, data_cy }) => {
   return (
-    <Modal data-cy={data_cy} open={isOpen} onClose={onClose}>
-      <Box sx={styles.modalAlertCard}>
+    <Modal open={isOpen} onClose={onClose}>
+      <Box data-cy={data_cy} sx={styles.modalAlertCard}>
         <Box sx={styles.modalAlertCardBody}>
           <Typography
             data-cy={`${data_cy}-icon`}
