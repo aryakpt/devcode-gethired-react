@@ -30,7 +30,7 @@ const ActivityCard = ({ data_cy, id, title, created_at }) => {
   return (
     <>
       <Box data-cy={data_cy} sx={styles.activityCard}>
-        <Link data-cy={data_cy} to={`/detail/${id}`}></Link>
+        <Link to={`/detail/${id}`}></Link>
         <Typography data-cy="activity-item-title" variant="h3" fontWeight={700}>
           {trimmedString(title)}
         </Typography>
