@@ -78,7 +78,7 @@ const DetailHeader = ({ activity, isTodosExist }) => {
             <Button
               data_cy="todo-sort-button"
               endIcon={<IconSort />}
-              sx={{ padding: 0 }}
+              sx={{ padding: 0, zIndex: 2 }}
               onClick={() => setIsSortButtonOpen(!isSortButtonOpen)}
             ></Button>
           ) : (
