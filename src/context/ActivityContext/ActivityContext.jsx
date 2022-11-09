@@ -17,6 +17,8 @@ const ActivityProvider = ({ children }) => {
       email: 'aryakrisna07@gmail.com',
     }
   ) => {
+    // const res = await todoApi.createActivity(data);
+    // return setActivities([res.data, ...activities]);
     todoApi.createActivity(data);
     return getAllActivity();
   };
