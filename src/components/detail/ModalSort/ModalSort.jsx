@@ -13,10 +13,10 @@ const ModalSort = ({ onClose }) => {
 
   return (
     <>
-      {/* <Box sx={styles.backdropModalSort} onClick={onClose}></Box> */}
-      <Box data-cy="sort-parent" sx={styles.modalSort}>
+      <Box sx={styles.backdropModalSort} onClick={onClose}></Box>
+      <Box data-cy="sort-selection" sx={styles.modalSort}>
         <MenuItem
-          data-cy="sort-latest"
+          data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('latest')}
         >
@@ -24,7 +24,7 @@ const ModalSort = ({ onClose }) => {
           Terbaru
         </MenuItem>
         <MenuItem
-          data-cy="sort-oldest"
+          data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('oldest')}
         >
@@ -32,7 +32,7 @@ const ModalSort = ({ onClose }) => {
           Terlama
         </MenuItem>
         <MenuItem
-          data-cy="sort-az"
+          data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('asc')}
         >
@@ -40,7 +40,7 @@ const ModalSort = ({ onClose }) => {
           A-Z
         </MenuItem>
         <MenuItem
-          data-cy="sort-za"
+          data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('dec')}
         >
@@ -48,7 +48,7 @@ const ModalSort = ({ onClose }) => {
           Z-A
         </MenuItem>
         <MenuItem
-          data-cy="sort-unfinished"
+          data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('unfinished')}
         >
