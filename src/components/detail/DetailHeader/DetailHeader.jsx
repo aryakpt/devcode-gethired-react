@@ -74,16 +74,12 @@ const DetailHeader = ({ activity, isTodosExist }) => {
       </Box>
       <Box sx={styles.detailHeaderRight}>
         <Box sx={styles.detailHeaderSortButton}>
-          {isTodosExist ? (
-            <Button
-              data_cy="todo-sort-button"
-              endIcon={<IconSort />}
-              sx={{ padding: 0, zIndex: 2 }}
-              onClick={() => setIsSortButtonOpen(!isSortButtonOpen)}
-            ></Button>
-          ) : (
-            ''
-          )}
+          <Button
+            data_cy="todo-sort-button"
+            endIcon={<IconSort />}
+            sx={{ padding: 0, zIndex: 2 }}
+            onClick={() => setIsSortButtonOpen(!isSortButtonOpen)}
+          ></Button>
           {isSortButtonOpen && <ModalSort onClose={() => setIsSortButtonOpen(false)} />}
         </Box>
         <Button
