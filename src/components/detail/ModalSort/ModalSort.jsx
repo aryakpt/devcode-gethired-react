@@ -20,40 +20,50 @@ const ModalSort = ({ onClose }) => {
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('latest')}
         >
-          <IconLatest />
-          Terbaru
+          <Box data-cy="sort-latest">
+            <IconLatest />
+            Terbaru
+          </Box>
         </MenuItem>
         <MenuItem
           data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('oldest')}
         >
-          <IconOldest />
-          Terlama
+          <Box data-cy="sort-oldest">
+            <IconOldest />
+            Terlama
+          </Box>
         </MenuItem>
         <MenuItem
           data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('asc')}
         >
-          <IconAZ />
-          A-Z
+          <Box data-cy="sort-az">
+            <IconAZ />
+            A-Z
+          </Box>
         </MenuItem>
         <MenuItem
           data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('dec')}
         >
-          <IconZA />
-          Z-A
+          <Box data-cy="sort-za">
+            <IconZA />
+            Z-A
+          </Box>
         </MenuItem>
         <MenuItem
           data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
           onClick={() => onSortHandler('unfinished')}
         >
-          <IconUnfinished />
-          Belum Selesai
+          <Box data-cy="unfinished">
+            <IconUnfinished />
+            Belum Selesai
+          </Box>
         </MenuItem>
       </Box>
     </>
