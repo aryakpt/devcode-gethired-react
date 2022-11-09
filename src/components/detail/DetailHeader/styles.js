@@ -15,6 +15,7 @@ const styles = {
   },
   detailHeaderSortButton: {
     position: 'relative',
+    zIndex: 5,
   },
 };
 
