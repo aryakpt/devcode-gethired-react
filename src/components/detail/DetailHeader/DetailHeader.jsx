@@ -73,7 +73,7 @@ const DetailHeader = ({ activity, isTodosExist }) => {
         />
       </Box>
       <Box sx={styles.detailHeaderRight}>
-        <Box data_cy="todo-sort-button" sx={styles.detailHeaderSortButton}>
+        <Box sx={styles.detailHeaderSortButton}>
           {isTodosExist ? (
             <Button
               data_cy="todo-sort-button"
