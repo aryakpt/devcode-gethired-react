@@ -14,7 +14,7 @@ const ModalSort = ({ onClose }) => {
   return (
     <>
       <Box sx={styles.backdropModalSort} onClick={onClose}></Box>
-      <Box data-cy="sort-selection" sx={styles.modalSort}>
+      <Box sx={styles.modalSort}>
         <MenuItem
           data-cy="sort-selection"
           sx={styles.modalSortMenuItem}
