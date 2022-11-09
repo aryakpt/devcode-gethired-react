@@ -18,8 +18,11 @@ const styles = {
     boxShadow: ' 0px 6px 15px 5px rgba(0, 0, 0, 0.1)',
   },
   modalSortMenuItem: {
-    display: 'flex',
-    gap: '17.25px',
+    div: {
+      display: 'flex',
+      gap: '17.25px',
+      alignItems: 'center',
+    },
     padding: '14px 24px',
     borderTop: 1,
     borderBottom: 1,
