@@ -95,6 +95,7 @@ const ModalAddListItem = ({ data_cy, isOpen, onClose, onConfirm, title }) => {
                 }}
               >
                 <Select
+                  data-cy={`${data_cy}-priority-dropdown`}
                   value={inputPriority}
                   onChange={(e) => setInputPriority(e.target.value)}
                   displayEmpty

@@ -43,6 +43,7 @@ const DetailHeader = ({ activity, isTodosExist }) => {
         {isOnEdit ? (
           <form onSubmit={onSubmitHandler(activity.id)}>
             <Input
+              data-cy="todo-title"
               type="text"
               value={activityTitle}
               onChange={(e) => setActivityTitle(e.target.value)}

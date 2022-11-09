@@ -10,7 +10,7 @@ const ActivityList = () => {
     <Grid data-cy="activity-item" sx={styles.activityList} container spacing={'20px'}>
       {activityCtx.activities.map((activity, idx) => {
         return (
-          <Grid data-cy={`activity-item-${idx}`} item xs={12} sm={6} md={4} lg={3} key={idx}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
             <ActivityCard
               data_cy={`activity-item-${idx}`}
               id={activity.id}
