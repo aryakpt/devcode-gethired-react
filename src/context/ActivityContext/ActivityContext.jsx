@@ -8,8 +8,7 @@ const ActivityProvider = ({ children }) => {
 
   const getAllActivity = async () => {
     const res = await todoApi.getAllActivity();
-    setActivities(res);
-    return res;
+    return setActivities(res);
   };
 
   const createActivity = async (
@@ -19,8 +18,7 @@ const ActivityProvider = ({ children }) => {
     }
   ) => {
     const res = await todoApi.createActivity(data);
-    setActivities([res.data, ...activities]);
-    return res;
+    return getAllActivity();
   };
 
   const deleteActivity = (id) => {

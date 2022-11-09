@@ -95,7 +95,6 @@ const ModalAddListItem = ({ data_cy, isOpen, onClose, onConfirm, title }) => {
                 }}
               >
                 <Select
-                  data-cy={`${data_cy}-priority-dropdown`}
                   value={inputPriority}
                   onChange={(e) => setInputPriority(e.target.value)}
                   displayEmpty
@@ -112,6 +111,9 @@ const ModalAddListItem = ({ data_cy, isOpen, onClose, onConfirm, title }) => {
                   }}
                   required
                 >
+                  <MenuItem disabled value="">
+                    Pilih Priority
+                  </MenuItem>
                   {priorityList.map((priority, idx) => {
                     return (
                       <MenuItem
@@ -135,7 +137,7 @@ const ModalAddListItem = ({ data_cy, isOpen, onClose, onConfirm, title }) => {
               data_cy={`${data_cy}-save-button`}
               variant="primary"
               type="submit"
-              disabled={inputTitle ? false : true}
+              disabled={inputTitle && inputPriority ? false : true}
             >
               Simpan
             </Button>
